@@ -6,16 +6,16 @@ FILES = main.o op.o todec.o tobase.o
 all: $(FILES)
 	$(CC) $(CFLAGS) -o $(TARGET) $(FILES)
 
-main.o: main.c op.h todec.h tobase.h
+main.o: main.c op.c todec.c tobase.c
 	$(CC) $(CFLAGS) -c main.c
 
-todec.o: todec.h
+todec.o: todec.c
 	$(CC) $(CFLAGS) -c todec.c
 
-tobase.o: tobase.h
+tobase.o: tobase.c
 	$(CC) $(CFLAGS) -c tobase.c
 
-op.o: op.h
+op.o: op.c
 	$(CC) $(CFLAGS) -c op.c
 
 clean:
