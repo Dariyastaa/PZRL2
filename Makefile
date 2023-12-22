@@ -4,19 +4,19 @@ FILES = main.o op.o todec.o tobase.o
 .PHONY: all clean run 
 
 all: $(FILES)
-	$(CC) $(CFLAGS) -o $(TARGET) $(FILES)
+	$(CC) -o $(TARGET) $(FILES)
 
-main.o: main.c op.c todec.c tobase.c
-	$(CC) $(CFLAGS) -c main.c
+main.o: main.c
+	$(CC) -c main.c
 
 todec.o: todec.c
-	$(CC) $(CFLAGS) -c todec.c
+	$(CC) -c todec.c
 
 tobase.o: tobase.c
-	$(CC) $(CFLAGS) -c tobase.c
+	$(CC) -c tobase.c
 
 op.o: op.c
-	$(CC) $(CFLAGS) -c op.c
+	$(CC) -c op.c
 
 clean:
 	rm -f $(FILES)
