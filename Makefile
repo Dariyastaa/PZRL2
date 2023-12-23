@@ -1,10 +1,10 @@
 CC = gcc
-TARGET = calc
 FILES = main.o op.o todec.o tobase.o
 .PHONY: all clean run 
+all: calc
 
-all: $(FILES)
-	$(CC) -o $(TARGET) $(FILES)
+calc: $(FILES)
+	$(CC) -o calc $(FILES)
 
 main.o: main.c
 	$(CC) -c main.c
@@ -19,7 +19,7 @@ op.o: op.c
 	$(CC) -c op.c
 
 clean:
-	rm -f $(FILES)
+	rm -f $(FILES) calc
 
-run: $(TARGET)
-	./$(TARGET)
+run: calc
+	./calc
